@@ -125,12 +125,12 @@ endfunction
 
 " Close the current window
 function! DWM_Close()
-  if winnr() == 1
-    " Close master panel.
-    return 'close | wincmd H | call DWM_ResizeMasterPaneWidth()'
-  else
-    return 'close'
+  let s:t = 'close'
+  " Close master panel.
+  if winnr() == 1 && winnr('$') > 2
+    let s:t .= ' | wincmd H | call DWM_ResizeMasterPaneWidth()'
   end
+  return s:t
 endfunction
 
 function! DWM_ResizeMasterPaneWidth()
