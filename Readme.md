@@ -7,13 +7,13 @@ Download page on vim.org: http://www.vim.org/scripts/script.php?script_id=4186
 Windows are always organised as follows: 
 
 ```
-===================================
-|              |        S1        | 
-|              |===================
-|      M       |        S2        | 
-|              |===================
-|              |        S3        | 
-===================================
+┌──────────────┬──────────────────┐
+│              │        S1        │ 
+│              ├──────────────────┤
+│      M       │        S2        │ 
+│              ├──────────────────┤
+│              │        S3        │ 
+└──────────────┴──────────────────┘
 ```
 
 Use the following commands to create, browse and close windows: 

@@ -34,13 +34,15 @@ endif
 
 " All layout transformations assume the layout contains one master pane on the
 " left and an arbitrary number of stacked panes on the right
-" +--------+--------+
-" |        |   S1   |
-" |        +--------+
-" |   M    |   S3   |
-" |        +--------+
-" |        |   S3   |
-" +--------+--------+
+" ┌────────┬────────┐
+" │        │   S1   │
+" │        │        │
+" │        ├────────┤
+" │   M    │   S2   │
+" │        ├────────┤
+" │        │        │
+" │        │   S3   │
+" └────────┴────────┘
 
 " Move the current master pane to the stack
 function! DWM_Stack(clockwise)
@@ -57,15 +59,15 @@ function! DWM_Stack(clockwise)
   endif
   " At this point, the layout *should* be the following with the previous master
   " at the top.
-  " +-----------------+
-  " |        M        |
-  " +-----------------+
-  " |        S1       |
-  " +-----------------+
-  " |        S2       |
-  " +-----------------+
-  " |        S3       |
-  " +-----------------+
+  " ┌─────────────────┐
+  " │        M        │
+  " ├─────────────────┤
+  " │        S1       │
+  " ├─────────────────┤
+  " │        S2       │
+  " ├─────────────────┤
+  " │        S3       │
+  " └─────────────────┘
 endfunction
 
 " Add a new buffer
