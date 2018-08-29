@@ -44,6 +44,9 @@ endif
 
 " Move the current master pane to the stack
 function! DWM_Stack(clockwise)
+  if winnr("$") == 1
+    return
+  endif
   1wincmd w
   if a:clockwise
     " Move to the top of the stack
@@ -169,6 +172,9 @@ function! DWM_ShrinkMaster()
 endfunction
 
 function! DWM_Rotate(clockwise)
+  if winnr("$") == 1
+    return
+  endif
   call DWM_Stack(a:clockwise)
   if a:clockwise
     wincmd W
